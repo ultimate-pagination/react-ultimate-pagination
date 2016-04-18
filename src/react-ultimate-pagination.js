@@ -19,4 +19,4 @@ UltimatePagination.propTypes = {
   totalPages: React.PropTypes.number.isRequired
 };
 
-export UltimatePagination;
+export {UltimatePagination};
