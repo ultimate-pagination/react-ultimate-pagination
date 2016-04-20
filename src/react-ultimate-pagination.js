@@ -1,14 +1,14 @@
 import React from 'react';
-import {getPaginationModel} from 'ultimate-pagination';
+import {getPaginationModel, ITEM_TYPES} from 'ultimate-pagination';
 
-const isEllipsis = item => item === '...';
+const activeButtonStyle = {fontWeight: 'bold'};
 
 const UltimatePagination = ({currentPage, totalPages, onChange}) => {
   const paginationModel = getPaginationModel(currentPage, totalPages);
-  const onPageClick = (item) => {
+  const onPageClick = (newPage) => {
     return () => {
-      if (onChange && currentPage !== item) {
-        onChange(item);
+      if (onChange && currentPage !== newPage) {
+        onChange(newPage);
       }
     };
   };
@@ -17,7 +17,14 @@ const UltimatePagination = ({currentPage, totalPages, onChange}) => {
     <div>
       {
         paginationModel.map((item, index) => (
-          <button key={index} disabled={isEllipsis(item)} onClick={onPageClick(item)}>{item}</button>
+          <button
+            key={item.value}
+            disabled={item.type === ITEM_TYPES.ELLIPSIS}
+            style={item.isActive ? activeButtonStyle : null}
+            onClick={onPageClick(item.value)}
+          >
+            {item.type === ITEM_TYPES.PAGE ? item.value : '...'}
+          </button>
         ))
       }
     </div>
