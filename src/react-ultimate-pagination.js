@@ -13,7 +13,7 @@ const renderItemComponentFunctionFactory = (itemTypeToComponent, currentPage, on
   return (item) => {
     const ItemComponent = itemTypeToComponent[item.type];
     const onItemClick = onItemClickFunctionFactory(item.value);
-    return <ItemComponent onClick={onItemClick} {...item}/>
+    return <ItemComponent onClick={onItemClick} {...item}/>;
   }
 };
 
