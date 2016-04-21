@@ -26,7 +26,7 @@
   "dependencies": {
     "react": "^15.0.1",
     "react-dom": "^15.0.1",
-    "ultimate-pagination": "0.3.0"
+    "ultimate-pagination": "0.4.0"
   },
   "devDependencies": {
     "babel-core": "^6.7.6",
