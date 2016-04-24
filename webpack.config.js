@@ -2,13 +2,13 @@ module.exports = {
   entry: './src/react-ultimate-pagination.js',
   output: {
     path: './dist',
-    filename: 'react-ultimate-pagination.js',
     library: 'reactUltimatePagination',
     libraryTarget: 'umd',
   },
   externals: [
-    '<react></react>'
+    'react'
   ],
+  devtool: 'source-map',
   module: {
     loaders: [
       {
