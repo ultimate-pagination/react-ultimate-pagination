@@ -30,8 +30,8 @@ This module provides `createUltimatePagination(options)` method that is a React.
 
 The `options` object contains following properties:
 
-- **itemTypeToComponent**: object - an object that is used as a map from the item type to the React.js component that will be used to render this item
-- **WrapperComponent**: React.Component - a React.js component that will be used as a wrapper for pagination items (*optional*, *default*: `React.DOM.div`)
+- **itemTypeToComponent**: *object* - an object that is used as a map from the item type to the React.js component that will be used to render this item
+- **WrapperComponent**: *React.Component* - a React.js component that will be used as a wrapper for pagination items (*optional*, *default*: `React.DOM.div`)
 
 The `itemTypeToComponent` object should contains React.js component for each item type:
 
