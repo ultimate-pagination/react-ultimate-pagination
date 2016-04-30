@@ -12,6 +12,7 @@ To use **react-ultimate-pagination** in your project, you can write your theme o
 
 Here is a list of themed versions of **react-ultimate-pagination** component. To use them you don't need explicitly install this module to your project; it will be installed automatically as a dependency of themed component.
 
+- [Basic Theme](https://github.com/ultimate-pagination/react-ultimate-pagination-basic)
 - [Material UI Theme](https://github.com/ultimate-pagination/react-ultimate-pagination-material-ui)
 
 ## Installation
