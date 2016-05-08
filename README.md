@@ -14,6 +14,7 @@ Here is a list of themed versions of **react-ultimate-pagination** component. To
 
 - [Basic Theme](https://github.com/ultimate-pagination/react-ultimate-pagination-basic) ([Demo](http://codepen.io/dmytroyarmak/full/GZwKZJ))
 - [Bootstrap 3 Theme](https://github.com/ultimate-pagination/react-ultimate-pagination-bootstrap-3) ([Demo](http://codepen.io/dmytroyarmak/full/YqBQYw/))
+- [Bootstrap 4 Theme](https://github.com/ultimate-pagination/react-ultimate-pagination-bootstrap-4) ([Demo](http://codepen.io/dmytroyarmak/full/VagMQq/))
 - [Material UI Theme](https://github.com/ultimate-pagination/react-ultimate-pagination-material-ui) ([Demo](http://ultimate-pagination.github.io/react-ultimate-pagination-examples/))
 
 ## Installation
