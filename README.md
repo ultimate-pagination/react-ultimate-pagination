@@ -41,7 +41,7 @@ The `itemTypeToComponent` object should contains React.js component for each ite
 - `PAGE` - a link to a page
 - `ELLIPSIS` - an item that represents groups of pages that currently are not visible in paginator (can be used to navigate to the page in the group that is the nearest to the current page)
 - `FIRST_PAGE_LINK` - a link to the first page
-- `PREVIOS_PAGE_LINK` - a link to the previous page
+- `PREVIOUS_PAGE_LINK` - a link to the previous page
 - `NEXT_PAGE_LINK` - a link to the next page
 - `LAST_PAGE_LINK` - a link to the last page
 
@@ -69,7 +69,7 @@ function FirstPageLink(props) {
 }
 
 function PreviousPageLink(props) {
-  return <button onClick={props.onClick}>Previos</button>
+  return <button onClick={props.onClick}>Previous</button>
 }
 
 function NextPageLink(props) {
@@ -88,7 +88,7 @@ var itemTypeToComponent = {
   'PAGE': Page,
   'ELLIPSIS': Ellipsis,
   'FIRST_PAGE_LINK': FirstPageLink,
-  'PREVIOS_PAGE_LINK': PreviousPageLink,
+  'PREVIOUS_PAGE_LINK': PreviousPageLink,
   'NEXT_PAGE_LINK': NextPageLink,
   'LAST_PAGE_LINK': LastPageLink
 };

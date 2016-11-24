@@ -36,7 +36,7 @@
   "dependencies": {
     "react": "^15.0.1",
     "react-dom": "^15.0.1",
-    "ultimate-pagination": "0.7.0"
+    "ultimate-pagination": "0.8.0"
   },
   "devDependencies": {
     "babel-cli": "^6.7.7",
