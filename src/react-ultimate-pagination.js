@@ -18,10 +18,15 @@ const renderItemComponentFunctionFactory = (itemTypeToComponent, currentPage, on
 };
 
 export const createUltimatePagination = ({itemTypeToComponent, WrapperComponent = 'div'}) => {
-  const UltimatePaginationComponent = ({currentPage, totalPages, onChange}) => {
+  const UltimatePaginationComponent = (props) => {
+    const {
+      currentPage,
+      totalPages,
+      onChange
+    } = props;
     const paginationModel = getPaginationModel({currentPage, totalPages});
     const renderItemComponent = renderItemComponentFunctionFactory(itemTypeToComponent, currentPage, onChange);
-    return <WrapperComponent>{paginationModel.map(renderItemComponent)}</WrapperComponent>;
+    return <WrapperComponent {...props}>{paginationModel.map(renderItemComponent)}</WrapperComponent>;
   };
 
   UltimatePaginationComponent.propTypes = {
