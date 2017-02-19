@@ -18,8 +18,27 @@ const renderItemComponentFunctionFactory = (itemTypeToComponent, currentPage, on
 };
 
 export const createUltimatePagination = ({itemTypeToComponent, WrapperComponent = 'div'}) => {
-  const UltimatePaginationComponent = ({currentPage, totalPages, onChange}) => {
-    const paginationModel = getPaginationModel({currentPage, totalPages});
+  const UltimatePaginationComponent = (props) => {
+    const {
+      currentPage,
+      totalPages,
+      boundaryPagesRange,
+      siblingPagesRange,
+      hideEllipsis,
+      hidePreviousAndNextPageLinks,
+      hideFirstAndLastPageLinks,
+      onChange
+    } = props;
+
+    const paginationModel = getPaginationModel({
+      currentPage,
+      totalPages,
+      boundaryPagesRange,
+      siblingPagesRange,
+      hideEllipsis,
+      hidePreviousAndNextPageLinks,
+      hideFirstAndLastPageLinks
+    });
     const renderItemComponent = renderItemComponentFunctionFactory(itemTypeToComponent, currentPage, onChange);
     return <WrapperComponent>{paginationModel.map(renderItemComponent)}</WrapperComponent>;
   };
@@ -27,6 +46,11 @@ export const createUltimatePagination = ({itemTypeToComponent, WrapperComponent 
   UltimatePaginationComponent.propTypes = {
     currentPage: React.PropTypes.number.isRequired,
     totalPages: React.PropTypes.number.isRequired,
+    boundaryPagesRange: React.PropTypes.number,
+    siblingPagesRange: React.PropTypes.number,
+    hideEllipsis: React.PropTypes.bool,
+    hidePreviousAndNextPageLinks: React.PropTypes.bool,
+    hideFirstAndLastPageLinks: React.PropTypes.bool,
     onChange: React.PropTypes.func
   };
 

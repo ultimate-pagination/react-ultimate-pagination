@@ -103,6 +103,11 @@ Created `UltimatePagination` component has the following interface:
 
 - **currentPage**: *number* - current page number
 - **totalPages**: *number* - total number of pages
+- **boundaryPagesRange**: *number, optional, default: 1* - number of always visible pages at the beginning and end
+- **siblingPagesRange**: *number, optional, default: 1* - number of always visible pages before and after the current one
+- **hideEllipsis**: *bool, optional, default: false* - boolean flag to hide ellipsis
+- **hidePreviousAndNextPageLinks**: *bool, optional, default: false* - boolean flag to hide previous and next page links
+- **hideFirstAndLastPageLink**: *bool, optional, default: false* - boolean flag to hide first and last page links
 - **onChange**: *function* - callback that will be called with new page when it should be changed by user interaction (*optional*)
 
 [downloads-image]: https://img.shields.io/npm/dm/react-ultimate-pagination.svg
