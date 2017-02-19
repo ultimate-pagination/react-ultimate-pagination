@@ -17,13 +17,13 @@ module.exports = {
   ],
   devtool: 'source-map',
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.jsx?$/,
-        exclude: /(node_modules|bower_components)/,
-        loader: 'babel',
+        exclude: /(node_modules)/,
+        loader: 'babel-loader',
         query: {
-          presets: ['es2015', 'react']
+          presets: [['es2015', { "modules": false }], 'react']
         }
       }
     ]
