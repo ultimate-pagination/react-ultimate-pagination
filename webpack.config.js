@@ -1,7 +1,9 @@
+var path = require('path');
+
 module.exports = {
   entry: './src/react-ultimate-pagination.js',
   output: {
-    path: './dist',
+    path: path.resolve(__dirname, 'dist'),
     library: 'reactUltimatePagination',
     libraryTarget: 'umd',
   },
