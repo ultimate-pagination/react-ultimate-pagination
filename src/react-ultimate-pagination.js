@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types'
 import {getPaginationModel, ITEM_TYPES} from 'ultimate-pagination';
 
 const renderItemComponentFunctionFactory = (itemTypeToComponent, currentPage, onChange) => {
@@ -44,14 +45,14 @@ export const createUltimatePagination = ({itemTypeToComponent, WrapperComponent 
   };
 
   UltimatePaginationComponent.propTypes = {
-    currentPage: React.PropTypes.number.isRequired,
-    totalPages: React.PropTypes.number.isRequired,
-    boundaryPagesRange: React.PropTypes.number,
-    siblingPagesRange: React.PropTypes.number,
-    hideEllipsis: React.PropTypes.bool,
-    hidePreviousAndNextPageLinks: React.PropTypes.bool,
-    hideFirstAndLastPageLinks: React.PropTypes.bool,
-    onChange: React.PropTypes.func
+    currentPage: PropTypes.number.isRequired,
+    totalPages: PropTypes.number.isRequired,
+    boundaryPagesRange: PropTypes.number,
+    siblingPagesRange: PropTypes.number,
+    hideEllipsis: PropTypes.bool,
+    hidePreviousAndNextPageLinks: PropTypes.bool,
+    hideFirstAndLastPageLinks: PropTypes.bool,
+    onChange: PropTypes.func
   };
 
   return UltimatePaginationComponent;

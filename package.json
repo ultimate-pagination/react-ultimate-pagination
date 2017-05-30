@@ -34,6 +34,7 @@
   },
   "homepage": "https://github.com/ultimate-pagination/react-ultimate-pagination",
   "dependencies": {
+    "prop-types": "^15.0.0",
     "ultimate-pagination": "1.0.0"
   },
   "peerDependencies": {
