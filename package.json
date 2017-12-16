@@ -1,6 +1,6 @@
 {
   "name": "react-ultimate-pagination",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "React.js pagination component based on ultimate-pagination",
   "main": "lib/react-ultimate-pagination.js",
   "keywords": [
