@@ -28,7 +28,8 @@ export const createUltimatePagination = ({itemTypeToComponent, WrapperComponent 
       hideEllipsis,
       hidePreviousAndNextPageLinks,
       hideFirstAndLastPageLinks,
-      onChange
+      onChange,
+      ...restProps
     } = props;
 
     const paginationModel = getPaginationModel({
@@ -41,7 +42,7 @@ export const createUltimatePagination = ({itemTypeToComponent, WrapperComponent 
       hideFirstAndLastPageLinks
     });
     const renderItemComponent = renderItemComponentFunctionFactory(itemTypeToComponent, currentPage, onChange);
-    return <WrapperComponent>{paginationModel.map(renderItemComponent)}</WrapperComponent>;
+    return <WrapperComponent {...restProps}>{paginationModel.map(renderItemComponent)}</WrapperComponent>;
   };
 
   UltimatePaginationComponent.propTypes = {
