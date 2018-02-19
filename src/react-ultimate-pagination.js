@@ -3,18 +3,18 @@ import PropTypes from 'prop-types'
 import {getPaginationModel, ITEM_TYPES} from 'ultimate-pagination';
 
 const renderItemComponentFunctionFactory = (itemTypeToComponent, currentPage, onChange) => {
-  const onItemClickFunctionFactory = (value) => {
+  const onItemClickFunctionFactory = ({ value, isDisabled }) => {
     return () => {
-      if (onChange && currentPage !== value) {
+      if (!isDisabled && onChange && currentPage !== value) {
         onChange(value);
       }
     }
   };
 
-  return (item) => {
-    const ItemComponent = itemTypeToComponent[item.type];
-    const onItemClick = onItemClickFunctionFactory(item.value);
-    return <ItemComponent onClick={onItemClick} {...item}/>;
+  return (props) => {
+    const ItemComponent = itemTypeToComponent[props.type];
+    const onItemClick = onItemClickFunctionFactory(props);
+    return <ItemComponent onClick={onItemClick} {...props}/>;
   }
 };
 
@@ -29,6 +29,7 @@ export const createUltimatePagination = ({itemTypeToComponent, WrapperComponent 
       hidePreviousAndNextPageLinks,
       hideFirstAndLastPageLinks,
       onChange,
+      disabled,
       ...restProps
     } = props;
 
@@ -42,7 +43,14 @@ export const createUltimatePagination = ({itemTypeToComponent, WrapperComponent 
       hideFirstAndLastPageLinks
     });
     const renderItemComponent = renderItemComponentFunctionFactory(itemTypeToComponent, currentPage, onChange);
-    return <WrapperComponent {...restProps}>{paginationModel.map(renderItemComponent)}</WrapperComponent>;
+    return (
+      <WrapperComponent {...restProps}>
+        {paginationModel.map((itemModel) => renderItemComponent({
+          ...itemModel,
+          isDisabled: !!disabled,
+        }))}
+      </WrapperComponent>
+    );
   };
 
   UltimatePaginationComponent.propTypes = {
@@ -53,7 +61,8 @@ export const createUltimatePagination = ({itemTypeToComponent, WrapperComponent 
     hideEllipsis: PropTypes.bool,
     hidePreviousAndNextPageLinks: PropTypes.bool,
     hideFirstAndLastPageLinks: PropTypes.bool,
-    onChange: PropTypes.func
+    onChange: PropTypes.func,
+    disabled: PropTypes.bool
   };
 
   return UltimatePaginationComponent;

@@ -48,6 +48,7 @@ The `itemTypeToComponent` object should contains React.js component for each ite
 Each of this component receives as a `props` following data:
 - **value**: *number* - number of pages that user should navigate to when item is activated (for items with type `PAGE` it also can be used as a label in UI)
 - **isActive**: *boolean* - show if `currentPage` if the same as `value` of an item (can be used to highlight a current page or disable first, previous, next or last page links when user is already on first/last page)
+- **isDisabled**: *boolean* - show if button should be disabled
 - **onClick()**: function - should be called when user interacted with a component and the current page should be changed to the page represented by item (no arguments should be used, can be used for all item types)
 
 Here is an example of basic usage:
@@ -57,27 +58,33 @@ var React = require('react');
 var ReactUltimatePagination = require('react-ultimate-pagination');
 
 function Page(props) {
-  return <button style={props.isActive ? {fontWeight: 'bold'} : null} onClick={props.onClick}>{props.value}</button>
+  return (
+    <button
+      style={props.isActive ? {fontWeight: 'bold'} : null}
+      onClick={props.onClick}
+      disabled={props.disabled}
+    >{props.value}</button>
+  );
 }
 
 function Ellipsis(props) {
-  return <button onClick={props.onClick}>...</button>
+  return <button onClick={props.onClick} disabled={props.disabled}>...</button>
 }
 
 function FirstPageLink(props) {
-  return <button onClick={props.onClick}>First</button>
+  return <button onClick={props.onClick} disabled={props.disabled}>First</button>
 }
 
 function PreviousPageLink(props) {
-  return <button onClick={props.onClick}>Previous</button>
+  return <button onClick={props.onClick} disabled={props.disabled}>Previous</button>
 }
 
 function NextPageLink(props) {
-  return <button onClick={props.onClick}>Next</button>
+  return <button onClick={props.onClick} disabled={props.disabled}>Next</button>
 }
 
 function LastPageLink(props) {
-  return <button onClick={props.onClick}>Last</button>
+  return <button onClick={props.onClick} disabled={props.disabled}>Last</button>
 }
 
 function Wrapper(props) {
@@ -109,6 +116,7 @@ Created `UltimatePagination` component has the following interface:
 - **hidePreviousAndNextPageLinks**: *bool, optional, default: false* - boolean flag to hide previous and next page links
 - **hideFirstAndLastPageLinks**: *bool, optional, default: false* - boolean flag to hide first and last page links
 - **onChange**: *function* - callback that will be called with new page when it should be changed by user interaction (*optional*)
+- **disabled**: *bool, optional, default: false* - boolean flag to disable all buttons in pagination
 
 [downloads-image]: https://img.shields.io/npm/dm/react-ultimate-pagination.svg
 [npm-url]: https://www.npmjs.com/package/react-ultimate-pagination
