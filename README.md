@@ -4,7 +4,7 @@
 
 [![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url]
 
-React.js pagination component based on ultimate-pagination. It's implemented as a hight-order component that allows easy integration of **react-ultimate-pagination** with different CSS frameworks or approaches.
+React.js pagination component based on ultimate-pagination. It's implemented as a higher-order component that allows easy integration of **react-ultimate-pagination** with different CSS frameworks or approaches.
 
 To use **react-ultimate-pagination** in your project, you can write your theme or use one of already existing.
 
